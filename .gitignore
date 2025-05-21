@@ -1,8 +1,9 @@
-./__pycache__
-./results
-./__pycache__
-./splits/dongintest
-./splits/endovis
-./readme.txt
-./*.sh
-./splits/endovis2/gt_depths.npz
+__pycache__
+results
+__pycache__
+splits/dongintest
+splits/endovis
+readme.txt
+*.sh
+# Ignore large depth file
+splits/endovis2/gt_depths.npz
