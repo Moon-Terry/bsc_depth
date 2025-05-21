@@ -5,15 +5,11 @@ This repository contains the implementation of the project _"Self-supervised Dep
 ## Overview
 
 <p align="center">
-<img src='imgs/visual_abstract.png', width=800\>
-<img src='imgs/model_structure.png', width=800\>
+<img src='imgs/visual_abstract.jpg', width=800\>
+<img src='imgs/model_structure.jpg', width=800\>
 </p>
 
 ## Datasets
-
-<p align="center">
-<img src='imgs/training_pipeline.png', width=800\>
-</p>
 
 SCARED dataset
 - Description: Porcine cadaver data with ground-truth depth and pose (Phase 1)
@@ -34,6 +30,11 @@ conda env create -f requirements.yaml
 ```
 
 ## Training Pipeline
+
+<p align="center">
+<img src='imgs/training_pipeline.jpg', width=800\>
+</p>
+
 We adopt a two-phase training pipeline:
 	•	Phase 1: Train on the SCARED dataset with ground-truth supervision
 	•	Phase 2: Fine-tune on unlabeled PIPAC dataset using a self-supervised objective
@@ -72,6 +73,6 @@ CUDA_VISIBLE_DEVICES=0 python test_simple.py --model_path /path_to_checkpoint/ -
 - Our pipeline shows potential for clinical deployment, but further work is needed to improve robustness to occlusions, lighting variations, and anatomical diversity
 
 ## References
-```
+
 Shao, S., Pei, Z., Chen, W., Zhu, W., Wu, X., Sun, D., & Zhang, B. (2021). Self-Supervised monocular depth and ego-Motion estimation in endoscopy: Appearance flow to the rescue. Medical Image Analysis, 77, 102338. https://doi.org/10.1016/j.media.2021.102338 
-```
+
