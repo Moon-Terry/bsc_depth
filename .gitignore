@@ -1,0 +1,8 @@
+./__pycache__
+./results
+./__pycache__
+./splits/dongintest
+./splits/endovis
+./readme.txt
+./*.sh
+./splits/endovis2/gt_depths.npz
