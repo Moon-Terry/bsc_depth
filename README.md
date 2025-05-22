@@ -11,16 +11,16 @@ This repository contains the implementation of the project _"Self-supervised Dep
 
 ## Datasets
 
-SCARED dataset
-- Description: Porcine cadaver data with ground-truth depth and pose (Phase 1)
-- Usage: Pre-training and numerical evaluation 
-- You can download the SCARED dataset on this [link](https://endovissub2019-scared.grand-challenge.org/) and follow the instructions. 
-- For the dataset pre-processing, see the [link](https://github.com/ShuweiShao/AF-SfMLearner/) described by the author of AF-SfMLearner.
+**SCARED dataset**
+The SCARED dataset consists of endoscopic video sequences captured using the da Vinci Xi surgical robot system on porcine cadavers. It provides ground-truth depth and pose information and is used in our work for both pre-training and quantitative evaluation (Phase 1).
 
-PIPAC Laparoscopy dataset
-- Description: Real-world clinical videos from laparoscopic procedures (Phase 2)
-- Usage: Fine-tuning on unlabeled data and visual evaluation
-- Note that the PIPAC laparoscopy dataset is private and was collected under institutional approval at Ghent University Hospital. Access to the dataset is restricted due to ethical and privacy considerations.
+- The dataset can be accessed via the following [link](https://endovissub2019-scared.grand-challenge.org/) by following the instructions provided.
+- For dataset preprocessing instructions, refer to the [AF-SfMLearner GitHub repository](https://github.com/ShuweiShao/AF-SfMLearner/), as outlined by the authors.
+
+**PIPAC Laparoscopy dataset**
+The PIPAC laparoscopy dataset comprises real-world clinical videos obtained from laparoscopic procedures (Phase 2). It is used for fine-tuning on unlabeled data and for qualitative visual evaluation.
+
+- Please note that this dataset is private and was collected under institutional approval at Ghent University Hospital. Due to ethical and privacy considerations, access to the dataset is restricted.
 
 ## Requirements
 We ran our experiments with PyTorch 1.11.0, torchvision 0.12.0, CUDA 11.5, Python 3.7.12 and Ubuntu 22.04.4.
@@ -36,8 +36,8 @@ conda env create -f requirements.yaml
 </p>
 
 We adopt a two-phase training pipeline:
-	•	Phase 1: Train on the SCARED dataset with ground-truth supervision
-	•	Phase 2: Fine-tune on unlabeled PIPAC dataset using a self-supervised objective
+- **Phase 1**: Train on the SCARED dataset, followed by numerical evaluation using ground truth depth information
+- **Phase 2**: Fine-tune on unlabeled PIPAC dataset, followed by visual evaluation by comparing results with [MiDaS](https://github.com/isl-org/MiDaS)
 
 The following is the example of the training pipeline:
 ```shell
@@ -66,6 +66,8 @@ The following is the example code snippet to obatin depth maps:
 CUDA_VISIBLE_DEVICES=0 python test_simple.py --model_path /path_to_checkpoint/ --image_path /path_to_input_frames/
 ```
 
+For obatining MiDaS depth maps, please refer to [MiDaS GitHub repository](https://github.com/isl-org/MiDaS).
+
 ## Key Findings
 - Phase 1 model generalizes well on well-controlled, high-quality data (SCARED)
 - Phase 2 model improves texture sensitivity but suffers from global inconsistency
@@ -75,4 +77,6 @@ CUDA_VISIBLE_DEVICES=0 python test_simple.py --model_path /path_to_checkpoint/ -
 ## References
 
 Shao, S., Pei, Z., Chen, W., Zhu, W., Wu, X., Sun, D., & Zhang, B. (2021). Self-Supervised monocular depth and ego-Motion estimation in endoscopy: Appearance flow to the rescue. Medical Image Analysis, 77, 102338. https://doi.org/10.1016/j.media.2021.102338 
+
+Ranftl, R., Lasinger, K., Hafner, D., Schindler, K., & Koltun, V. (2022). Towards robust monocular depth estimation: Mixing datasets for zero-shot cross-dataset transfer. IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(3), 1623–1638. https://doi.org/10.1109/TPAMI.2020.3019967 
 
