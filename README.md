@@ -1,6 +1,6 @@
 # Self-supervised Depth Estimation for Monocular Laparoscopic Surgery
 
-This repository contains the implementation of the project _"Self-supervised Depth Estimation for Monocular Laparoscopy Videos"_. In this project, we investigate the performance and generalizability of a two-stage self-supervised training pipeline for predicting depth from monocular laparoscopic videos. Our method is based on the [AF-SfMLearner architecture](https://github.com/ShuweiShao/AF-SfMLearner/) and is evaluated on [SCARED dataset](https://endovissub2019-scared.grand-challenge.org/)-a high-quality, controlled endoscopic video dataset-and PIPAC Laparoscopy dataset, which represents real-world surgical data.
+This repository contains the implementation of the project _"Self-supervised Depth Estimation for Monocular Laparoscopy Videos"_. In this project, we investigate the performance and generalizability of a two-stage self-supervised training pipeline for predicting depth from monocular laparoscopic videos. Our method is based on the [AF-SfMLearner architecture](https://github.com/ShuweiShao/AF-SfMLearner/) and is evaluated on [SCARED dataset](https://endovissub2019-scared.grand-challenge.org/), a high-quality, controlled endoscopic video dataset, as well as the PIPAC Laparoscopy dataset, which captures real-world surgical conditions.
 
 ## Overview
 
@@ -13,13 +13,13 @@ This repository contains the implementation of the project _"Self-supervised Dep
 
 SCARED dataset
 - Description: Porcine cadaver data with ground-truth depth and pose (Phase 1)
-- Usage: Supervised evaluation + pretraining
+- Usage: Pre-training and numerical evaluation 
 - You can download the SCARED dataset on this [link](https://endovissub2019-scared.grand-challenge.org/) and follow the instructions. 
 - For the dataset pre-processing, see the [link](https://github.com/ShuweiShao/AF-SfMLearner/) described by the author of AF-SfMLearner.
 
 PIPAC Laparoscopy dataset
 - Description: Real-world clinical videos from laparoscopic procedures (Phase 2)
-- Usage: Fine-tuning on unlabeled data + qualitative testing
+- Usage: Fine-tuning on unlabeled data and visual evaluation
 - Note that the PIPAC laparoscopy dataset is private and was collected under institutional approval at Ghent University Hospital. Access to the dataset is restricted due to ethical and privacy considerations.
 
 ## Requirements

@@ -1,9 +1,16 @@
-__pycache__
-results
-__pycache__
-splits/dongintest
-splits/endovis
-readme.txt
-*.sh
-# Ignore large depth file
+# Bytecode
+*.pyc
+__pycache__/
+**/__pycache__/
+
+# Results & splits
+results/
+splits/dongintest/
+splits/endovis/
 splits/endovis2/gt_depths.npz
+
+# Shell scripts
+*.sh
+
+# Text files
+readme.txt
